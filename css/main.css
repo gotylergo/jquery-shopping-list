@@ -1,0 +1,71 @@
+body {
+	background-color: #689F38;
+}
+#container {
+    width: 350px;
+    margin: 15px auto;
+    border-radius: 2%;
+    box-shadow: 3px 5px 15px #212121;
+    background-color: #DCEDC8;
+}
+h1 {
+	color: white;
+	font-family: Roboto, sans-serif;
+	text-align: center;
+	background-color: #8BC34A;
+	padding: 15px 0;
+	border-radius: 4%;
+}
+section {
+	clear: both;
+	padding: 0 10px;
+}
+#list-input-section {
+	padding-bottom: 10px;
+}
+#add-button, #add-button:visited {
+	font-weight: bolder;
+	text-decoration: none;
+	border-radius: 50% 50%;
+	background-color: #FF4081;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	vertical-align: center;
+	color: white;
+	border: 0;
+	box-shadow: 2px 2px 5px #212121;
+	margin-right: 10px;
+}
+#add-item-box {
+	width: 295px;
+	border: 0px;
+}
+#add-button:hover {
+	background-color: #FF80AB;
+	box-shadow: 3px px 7px #212121;
+
+}
+#add-button,
+#unchecked-section > input,
+#checked-section > input {
+	float:left;
+}
+#unchecked-section > img,
+#checked-section > img,
+.delete-button {
+	float: right;
+}
+#unchecked-section > input:hover,
+#checked-section > input:hover {
+	display: block;
+}
+.checked-item {
+	text-decoration: line-through;
+}
+.delete-button {
+	float: right;
+}
+footer {
+	text-align: center;
+}

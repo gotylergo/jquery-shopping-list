@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="css/main.css" type="text/css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<script href="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<meta charset="UTF-8">
+	<title>A jQuery Shopping List</title>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>My Shopping List</h1>
+		</header>
+		<section id="list-input-section">
+			<a id="add-button" href="">+</a><input type="text" id="add-item-box" name="checked">
+		</section>
+		<section id="unchecked-section">
+			<div>
+				<input type="checkbox" name="item-checkbox" name="checked"><span>Item</span><span class="delete-button">X</span>
+			</div>
+			<div>
+				<input type="checkbox" name="item-checkbox" name="checked"><span>Item</span><span class="delete-button">X</span>
+			</div>
+			<div>
+				<input type="checkbox" name="item-checkbox" name="checked"><span>Item</span><span class="delete-button">X</span>
+			</div>
+		</section>
+		<section id="checked-section">
+			<div>
+				<input type="checkbox" name="item-checkbox" name="checked"><span class="checked-item">Item</span><span class="delete-button">X</span>
+			</div>
+		</section>
+		<section id="delete-checked-section">
+			<div>
+				<span>Delete all checked items</span>
+			</div>
+		</section>
+		<footer>&copy; Tyler Justyn</footer>
+	</div>
+</body>
+</html>
