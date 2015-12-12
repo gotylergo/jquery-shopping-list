@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link href="css/main.css" type="text/css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<meta charset="UTF-8">
 	<title>A jQuery Shopping List</title>
+	<link href="css/main.css" type="text/css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+	<script>
+		$(document).ready(function(){
+			$('#submitItem').submit(function(){
+			  console.log('item added');
+			  $('#addItemTextbox').val('');
+			  return false;
+			});
+		});
+	</script>
 </head>
 <body>
 
@@ -14,7 +24,7 @@
 		id="addButton", id="container", "uncheckedSection"
 
 		Classes: lowercase with hyphens
-		class="item-checkbox"
+		class="itemCheckbox"
 
 	-->
 
@@ -22,44 +32,31 @@
 		<header>
 			<h1>My Shopping List</h1>
 		</header>
-		<section id="list-input-section">
+		<section id="listInputSection">
 			<form id="submitItem">
 				<input type="submit" id="addButton" value="+" />
-				<input type="text" id="add-item-box" name="checked">
+				<input type="text" id="addItemTextbox" value='Type a new item here and hit "Enter"' name="checked">
 			</form>
 		</section>
-		<section id="unchecked-section">
+		<section id="uncheckedSection">
 			<div>
-				<input type="checkbox" id="item-checkbox" name="checked"><span>Item</span><span class="delete-button">X</span>
+				<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Un-checked items go here</span><span class="delete-button">-</span>
 			</div>
 			<div>
-				<input type="checkbox" id="item-checkbox" name="checked"><span class="unchecked-item">Item</span><span class="delete-button">X</span>
-			</div>
-			<div>
-				<input type="checkbox" id="item-checkbox" name="checked"><span>Item</span><span class="delete-button">X</span>
+				<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Drag items to reorder them</span><span class="delete-button">-</span>
 			</div>
 		</section>
 		<section id="checked-section">
 			<div>
-				<input type="checkbox" id="item-checkbox" name="checked"><span class="checked-item">Item</span><span class="delete-button">X</span>
+				<input type="checkbox" class="item-checkbox" name="checked"><span class="checked-item">Checked items go here</span><span class="delete-button">-</span>
 			</div>
 		</section>
-		<section id="delete-checked-section">
+		<section id="deleteCheckedSection">
 			<div>
-				<a id="delete-checked-link">Delete all checked items</a>
+				<a id="deleteCheckedLink">Delete all checked items</a>
 			</div>
 		</section>
 		<footer>&copy; Tyler Justyn</footer>
 	</div>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<script>
-		$(document).ready(function(){
-			$('#submitItem').submit(function(){
-			  console.log('item added');
-			  $('#add-item-box').val('');
-			  return false;
-			});
-		});
-	</script>
 </body>
 </html>
