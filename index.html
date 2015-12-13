@@ -8,26 +8,28 @@
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function(){
+			/* Add item */
 			$('#submitItem').submit(function(){
-			  console.log('item added');
-			  $('#addItemTextbox').val('');
+				$('#uncheckedSection > ul').prepend('<li><input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">' + $("#addItemTextbox").val() + '</span><span class="delete-button">-</span></li>');
+				$('#addItemTextbox').val('');
 			  return false;
 			});
+		/* Display delete button on hover */
+		$('ul').on("mouseenter","li", function() {
+			$(this).children('.delete-button').css("display","block");
+		});
+		$('ul').on("mouseleave","li", function() {
+			$(this).children('.delete-button').css("display","none");
+		});
+		/* Delete item when delete button click */
+		$('li').on("click",".delete-button", function() {
+				$(this).parent().remove();
+		});
+		$('#deleteCheckedSection > div').on("click","#deleteCheckedLink")
 		});
 	</script>
 </head>
 <body>
-
-	<!-- 
-
-		ID's: camelCase
-		id="addButton", id="container", "uncheckedSection"
-
-		Classes: lowercase with hyphens
-		class="itemCheckbox"
-
-	-->
-
 	<div id="container">
 		<header>
 			<h1>My Shopping List</h1>
@@ -39,21 +41,28 @@
 			</form>
 		</section>
 		<section id="uncheckedSection">
-			<div>
-				<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Un-checked items go here</span><span class="delete-button">-</span>
-			</div>
-			<div>
-				<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Drag items to reorder them</span><span class="delete-button">-</span>
-			</div>
+			<ul>
+				<li>
+					<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Add items using the box above</span><span class="delete-button">-</span>
+				</li>
+				<li>
+					<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Un-checked items go here</span><span class="delete-button">-</span>
+				</li>
+				<li>
+					<input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">Drag items to reorder them</span><span class="delete-button">-</span>
+				</li>
+			</ul>
 		</section>
-		<section id="checked-section">
-			<div>
+		<section id="checkedSection">
+			<ul>
+				<li>
 				<input type="checkbox" class="item-checkbox" name="checked"><span class="checked-item">Checked items go here</span><span class="delete-button">-</span>
-			</div>
+				</li>
+			</ul>
 		</section>
 		<section id="deleteCheckedSection">
 			<div>
-				<a id="deleteCheckedLink">Delete all checked items</a>
+				<a id="deleteCheckedLink" href="#">Delete all checked items</a>
 			</div>
 		</section>
 		<footer>&copy; Tyler Justyn</footer>

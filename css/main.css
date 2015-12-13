@@ -59,8 +59,13 @@ section {
 }
 #addButton,
 #uncheckedSection > input,
-#checked-section > input {
+#checkedSection > input {
 	float:left;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
 }
 .delete-button {
 	float: right;
