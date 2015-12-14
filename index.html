@@ -7,41 +7,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
 	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			/* Add item */
-			$('#submitItem').submit(function(){
-				$('#uncheckedSection > ul').prepend('<li><input type="checkbox" class="item-checkbox" name="checked"><span class="unchecked-item">' + $("#addItemTextbox").val() + '</span><span class="delete-button">-</span></li>');
-				$('#addItemTextbox').val('');
-			  return false;
-			});
-		/* Display delete button on hover */
-		$('ul').on("mouseenter","li", function() {
-			$(this).children('.delete-button').css("display","block");
-		});
-		$('ul').on("mouseleave","li", function() {
-			$(this).children('.delete-button').css("display","none");
-		});
-		/* Delete item when delete button click */
-		$('li').on("click",".delete-button", function() {
-				$(this).parent().remove();
-		});
-		/* Move unchecked-item to checkedSection */
-		$("#uncheckedSection > ul > li").on("click",".item-checkbox", function() {
-			$("#checkedSection > ul").append($(this).parent().removeClass("unchecked-item").addClass("checked-item"));
-		});
-		/* Move checked-item to uncheckedSection */
-		$("#checkedSection > ul > li").on("click", ".item-checkbox", function() { $("#uncheckedSection > ul").append($(this).parent());
-			$(this+"span").removeClass("checked-item").addClass("unchecked-item");
-		});
-		/* Delete all checked-items */ 
-		$("#deleteCheckedSection > div").on("click","#deleteCheckedLink", function() {
-			$("#checkedSection > ul > li").remove();
-		});
-		/* Sort items */
-		$('#uncheckedSection > ul').sortable({ axis: "y" });
-		$('#checkedSection > ul').sortable({ axis: "y" });
-	});
+	<script src="js/script.js" type="text/javascript">
 	</script>
 </head>
 <body>
@@ -52,7 +18,7 @@
 		<section id="listInputSection">
 			<form id="submitItem">
 				<input type="submit" id="addButton" value="+" />
-				<input type="text" id="addItemTextbox" value='Type a new item here and hit "Enter"' name="checked">
+				<input type="text" id="addItemTextbox" placeholder='Type a new item here and hit "Enter"' name="checked">
 			</form>
 		</section>
 		<section id="uncheckedSection">
@@ -70,8 +36,8 @@
 		</section>
 		<section id="checkedSection">
 			<ul>
-				<li>
-				<input type="checkbox" class="item-checkbox" name="checked" checked><span class="checked-item">Checked items go here</span><span class="delete-button">-</span>
+				<li class="checked-item">
+				<input type="checkbox" class="item-checkbox" name="checked" checked><span>Checked items go here</span><span class="delete-button">-</span>
 				</li>
 			</ul>
 		</section>
