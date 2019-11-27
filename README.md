@@ -1,7 +1,9 @@
 # jQuery-Shopping-List
 A simple shopping list using jQuery created as a project in my Thinkful Full Stack Web Development course.
 
-![Screenshot](https://imgur.com/ypf5XP4)
+[Live Demo](https://gotylergo.github.io/jquery-shopping-list/)
+
+![Screenshot](https://i.imgur.com/ypf5XP4.png)
 
 ## Technologies
  - [jQuery](https://jquery.com/) - cross-platform JavaScript library designed to simplify the client-side scripting of HTML
